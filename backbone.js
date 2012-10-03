@@ -334,6 +334,7 @@
     // triggering a `"change"` event.
     fetch: function(options) {
       options = options ? _.clone(options) : {};
+      if (options.parse === undefined) options.parse = true;
       var model = this;
       var success = options.success;
       options.success = function(resp, status, xhr) {
